@@ -1,0 +1,13 @@
+sudo: required
+services:
+  - docker
+env:
+  global:
+    - SHA=$(git rev-parse HEAD)
+before _install:
+  ## gcloud configuration
+  - echo "$DOCKER_ACCESS_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t hungvi/client-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true hungvi/client-test npm test

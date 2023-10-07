@@ -11,3 +11,9 @@ before _install:
 
 script:
   - docker run -e CI=true hungvi/client-test npm test
+
+deploy:
+  provider: script
+  script: bash ./deploy.sh
+  on:
+    branch: master

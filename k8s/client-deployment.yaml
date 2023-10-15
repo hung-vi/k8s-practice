@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: client-deployment
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: client
@@ -16,7 +17,7 @@ spec:
         image: hungvi/k8s-practice-client
         resources:
           limits:
-            memory: "128Mi"
-            cpu: "250m"
+            memory: "256Mi"
+            cpu: "100m"
         ports:
         - containerPort: 3000

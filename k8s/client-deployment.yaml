@@ -17,7 +17,7 @@ spec:
         image: hungvi/k8s-practice-client
         resources:
           limits:
-            memory: "256Mi"
-            cpu: "100m"
+            memory: "384Mi"
+            cpu: "1"
         ports:
         - containerPort: 3000

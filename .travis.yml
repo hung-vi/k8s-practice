@@ -16,7 +16,7 @@ before _install:
   - gcloud components update kubectl
   - gcloud auth activate-service-account --key-file service-account.json
   - gcloud config set project deep-way-401314
-  - gcloud config set compute/zone asia-southeast2-c
+  - gcloud config set compute/zone asia-southeast1-a
   - gcloud container clusters get-credentials cluster-k8s
   - echo "$DOCKER_ACCESS_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t hungvi/client-test -f ./client/Dockerfile.dev ./client

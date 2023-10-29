@@ -20,6 +20,7 @@ before _install:
   - gcloud container clusters get-credentials cluster-k8s
   - echo "$DOCKER_ACCESS_TOKEN" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t hungvi/client-test -f ./client/Dockerfile.dev ./client
+  - docker build -t hungvi/server-test -f ./server/Dockerfile.dev ./server
 
 script:
   - docker run -e CI=true hungvi/client-test npm test

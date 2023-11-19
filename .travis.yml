@@ -1,6 +1,6 @@
 matrix:
   include:
-    - python: 3.8
+    - python: 3.8.13
 sudo: required
 services:
   - docker

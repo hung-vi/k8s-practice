@@ -10,6 +10,7 @@ env:
     - CLOUDSDK_PYTHON="python3.8.13"
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 before _install:
+  - pyenv global 3.8.13
   ## gcloud configuration
   - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
   - if [ ! -d $HOME/google-cloud-sdk/bin ]; then
